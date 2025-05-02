@@ -1,0 +1,37 @@
+.context-menu {
+    position: relative;
+  
+    .plus-btn {
+      background: #062067;
+      border: none;
+      cursor: pointer;
+      font-size: 20px;
+      color: #fff;
+      height: 2rem;
+      width: 2rem;
+      border-radius: 30%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .dropdown {
+      position: absolute;
+      right: 0;
+      top: 40px;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 9rem;
+      
+      div {
+        padding: 10px;
+        cursor: pointer;
+        &:hover {
+          background-color: #f0f0f0;
+        }
+      }
+    }
+  }
+  

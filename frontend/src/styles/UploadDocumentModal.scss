@@ -1,0 +1,122 @@
+.upload-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    width: 420px;
+    max-width: 90vw;
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  
+      h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin: 0;
+      }
+  
+      .close-icon {
+        font-size: 20px;
+        cursor: pointer;
+        color: #555;
+  
+        &:hover {
+          color: #000;
+        }
+      }
+    }
+  
+    .upload-box {
+      border: 2px dashed #ccc;
+      border-radius: 10px;
+      height: 130px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f9f9f9;
+      cursor: pointer;
+  
+      i {
+        font-size: 40px;
+        color: #b0b0b0;
+      }
+  
+      &:hover {
+        background-color: #f2f6fb;
+      }
+    }
+  
+    .file-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+  
+      strong {
+        font-size: 15px;
+      }
+    }
+  
+    .progress-bar {
+      height: 6px;
+      width: 100%;
+      background: #e0e0e0;
+      border-radius: 4px;
+      overflow: hidden;
+  
+      .bar {
+        height: 100%;
+        background: #4caf50;
+        transition: width 0.2s ease;
+      }
+    }
+  
+    .progress-text {
+      margin-top: 0.3rem;
+      font-size: 14px;
+      color: #444;
+      text-align: right;
+    }
+  
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+      margin-top: 1rem;
+  
+      .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+        font-weight: 500;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+  
+      .btn-cancel {
+        background: #f2f2f2;
+        color: #333;
+      }
+  
+      .btn-upload {
+        background: #2f3a74;
+        color: white;
+  
+        &:disabled {
+          background: #b0b0b0;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+  

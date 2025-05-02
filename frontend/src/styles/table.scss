@@ -1,0 +1,80 @@
+.middle-table {
+  flex: 1;
+  overflow-y: auto;
+  background: #e2ecf8;
+  padding: 0.5rem;
+  height: 90%;
+
+  .table-header, .table-row {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1.5fr 1.5fr 0.5fr;
+    padding: 1rem;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+
+
+    .cell {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .folder-icon, .file-icon {
+        font-size: 18px;
+      }
+      .file-icon {
+        color: #3f51b5;
+      }
+
+      .name {
+        cursor: pointer;
+      }
+
+      &.actions {
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  .folder-row {
+    background-color: #fff;
+    margin: 1rem 0;
+    border-radius: 0.8rem;
+
+    &:hover {
+      background: #e0e7ff;
+    }
+
+    &.active {
+      background-color: #c7d2fe;
+    }
+  
+    &.is-child {
+      margin: 0;
+      border-radius: 0;
+      border-top: 1px solid #e0e0e0;
+    }
+  }
+  
+
+  .file-row {
+    background-color: #ffffff;
+  }
+
+  .dropdown {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    z-index: 100;
+    margin-top: 4px;
+    padding: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+
+    div {
+      padding: 4px 8px;
+      cursor: pointer;
+      &:hover {
+        background-color: #f2f2f2;
+      }
+    }
+  }
+}

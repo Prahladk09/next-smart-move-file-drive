@@ -1,0 +1,79 @@
+.filter-modal {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: white;
+    width: 400px;
+    padding: 1rem;
+    border: 1px solid #cdd5e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 1000;
+  
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      h3 {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+  
+      .clear-btn {
+        background: none;
+        border: none;
+        color: rgb(185, 14, 14);
+        font-weight: 500;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+  
+      .close-icon {
+        font-size: 20px;
+        cursor: pointer;
+      }
+    }
+  
+    .modal-body {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-top: 1rem;
+  
+      input {
+        padding: 10px;
+        border: 1px solid #d0d0d0;
+        border-radius: 6px;
+        font-size: 14px;
+      }
+    }
+  
+    .modal-footer {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+      margin-top: 1rem;
+  
+      .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+      }
+  
+      .btn-cancel {
+        background: #f0f0f0;
+        color: #333;
+      }
+  
+      .btn-apply {
+        background: #2f3a74;
+        color: white;
+      }
+    }
+  }
+  

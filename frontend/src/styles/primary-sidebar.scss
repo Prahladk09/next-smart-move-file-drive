@@ -1,0 +1,35 @@
+.primary-sidebar {
+  width: 60px;
+  background-color: #2D336B;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px 0;
+
+  .nav-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+
+    .nav-icon {
+      width: 30px;
+      height: 30px;
+      background: #3b4b79;
+      border-radius: 8px;
+      transition: 0.2s ease;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #5c6ca1;
+      }
+    }
+  }
+
+  .profile-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+}

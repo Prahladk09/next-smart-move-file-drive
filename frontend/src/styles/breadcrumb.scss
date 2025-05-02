@@ -1,0 +1,20 @@
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    gap: 4px;
+  
+    span {
+      cursor: pointer;
+      color: #3f51b5;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  
+    .separator {
+      margin: 0 6px;
+      color: #999;
+    }
+  }
+  
