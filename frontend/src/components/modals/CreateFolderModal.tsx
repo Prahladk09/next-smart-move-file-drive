@@ -14,8 +14,10 @@ function CreateFolderModal({ onClose, parentId }: Props) {
   const [description, setDescription] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const currentFolder = parentId;//useFileStore((s) => s.currentFolder);
+  const currentFolder = parentId;
   const fetchTree = useFileStore((s) => s.fetchFolderTree);
+  const loadFolderById = useFileStore((s) => s.loadFolderById);
+  const setCurrentFolder = useFileStore((s) => s.setCurrentFolder);
 
   const handleSubmit = async () => {
     if (!name.trim()) return;
@@ -24,9 +26,16 @@ function CreateFolderModal({ onClose, parentId }: Props) {
       await createFolder({
         name,
         description,
-        parent: currentFolder //currentFolder?._id || null,
+        parent: currentFolder 
       });
-      fetchTree?.();
+      if (currentFolder) {
+        await loadFolderById(currentFolder);
+      } else {
+        setCurrentFolder(null); // root view update
+      }
+      setTimeout(async () => {
+        await fetchTree(); // updates left panel
+      }, 100);
       onClose();
     } catch (err) {
       console.error('Create folder failed:', err);

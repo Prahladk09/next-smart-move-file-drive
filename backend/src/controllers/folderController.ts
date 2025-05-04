@@ -99,4 +99,39 @@ export const getFolderContents = async (req: Request, res: Response) => {
   }
 };
 
+export const deleteFolder = async (req: Request, res: Response) => {
+  const folderId = req.params.id;
+
+  if (!folderId){
+    res.status(400).json({ message: 'Folder ID required' });
+    return;
+  }
+
+  try {
+    // Recursively find all descendant folders
+    const allFolderIds: string[] = [];
+
+    const findChildren = async (id: string) => {
+      allFolderIds.push(id);
+      const children = await Folder.find({ parent: id });
+      for (const child of children) {
+        await findChildren(child._id.toString());
+      }
+    };
+
+    await findChildren(folderId);
+
+    // Delete files in all folders
+    await File.deleteMany({ folderId: { $in: allFolderIds } });
+
+    // Delete all folders (including root one)
+    await Folder.deleteMany({ _id: { $in: allFolderIds } });
+
+    res.json({ message: 'Folder and its contents deleted', deletedFolders: allFolderIds.length });
+  } catch (error) {
+    console.error('Folder delete error:', error);
+    res.status(500).json({ message: 'Failed to delete folder', error });
+  }
+};
+
 

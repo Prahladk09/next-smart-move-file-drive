@@ -1,8 +1,26 @@
 .file-manager{
+    height: 100%;
+    &::-webkit-scrollbar {
+        width: 6px;
+      }
+      &::-webkit-scrollbar-track {
+        background: #d4d2d2; 
+        border-radius: 4px;
+        padding: 0 2px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: #c0c4cc;
+        border-radius: 4px;
+        border: 2px solid #f3f4f6;
+      }
+    
+      &::-webkit-scrollbar-thumb:hover {
+        background: #a0a4b0;
+      }
     .file-manager-body{
         display: flex;
-        .right-panel{
-            width: 80%;
+        .middle-panel{
+            width: 100%;
         }
     }
 }

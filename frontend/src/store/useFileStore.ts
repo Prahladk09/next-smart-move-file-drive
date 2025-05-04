@@ -30,6 +30,8 @@ interface FileStoreState {
   folderTree: Folder[];
   searchTerm: string;
   uploadProgress: number;
+  selectedFile: FileItem | null;
+  setSelectedFile: (file: FileItem | null) => void;
 
   expandedFolders: Record<string, boolean>;
   toggleFolderExpand: (id: string) => void;
@@ -57,6 +59,9 @@ export const useFileStore = create<FileStoreState>()(
     isLeftSidebarOpen: true,
     expandedFolders: {},
     loadedFolders: {},
+    selectedFile: null,
+    setSelectedFile: (file) => set({ selectedFile: file }),
+
 
     setCurrentFolder: (folder) => set({ currentFolder: folder }),
     setSearchTerm: (term) => set({ searchTerm: term }),

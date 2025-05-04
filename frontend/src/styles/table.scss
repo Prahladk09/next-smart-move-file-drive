@@ -23,6 +23,7 @@
       }
       .file-icon {
         color: #3f51b5;
+        cursor: pointer;
       }
 
       .name {
@@ -33,6 +34,10 @@
         justify-content: flex-end;
       }
     }
+  }
+  .table-body{
+    overflow: auto;
+    height: 84vh;
   }
 
   .folder-row {

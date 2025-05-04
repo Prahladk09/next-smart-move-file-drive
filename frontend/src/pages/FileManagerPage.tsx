@@ -4,25 +4,23 @@ import TopBar from '../components/TopBars/TopBar';
 import FolderTree from '../components/LeftPanel/FolderTree';
 import PrimarySidebar from '../components/PrimarySidebar/PrimarySidebar';
 import MiddlePanel from '../components/MiddlePanel/MiddlePanel';
-// import { useFileStore } from '../store/useFileStore';
+// import DocumentViewer from '../components/DocumentViewer/DocumentViewer';
 
 const FileManagerPage: React.FC = () => {
-  // const isSidebarOpen = useFileStore((s) => s.isLeftSidebarOpen);
-  // const setSidebarOpen = useFileStore((s) => s.setLeftSidebarOpen);
 
   return (
     <div className="file-manager">
       <div className="file-manager-body">
         <PrimarySidebar />
-        {/* <div className={`sidebar ${isSidebarOpen ? 'open' : 'collapsed'}`}> */}
           <FolderTree />
-        {/* </div> */}
-        <div className='right-panel'>
+        <div className='middle-panel'>
           <TopBar />
           <MiddlePanel />
         </div>
-        {/* Middle: Folder contents */}
         {/* Right: DocumentViewer */}
+        {/* <div className='right-panel'>
+          <DocumentViewer />
+        </div> */}
       </div>
     </div>
   );

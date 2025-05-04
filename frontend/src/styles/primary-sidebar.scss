@@ -6,22 +6,35 @@
   justify-content: space-between;
   padding: 16px 0;
 
-  .nav-icons {
+  .nav-upper {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    align-items: center;
+    gap: 4rem;
+    .nav-icons {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
 
-    .nav-icon {
-      width: 30px;
-      height: 30px;
-      background: #3b4b79;
-      border-radius: 8px;
-      transition: 0.2s ease;
-      cursor: pointer;
+      .nav-icon {
+        width: 2rem;
+        height: 2rem;
+        background: #3b4b79;
+        border-radius: 8px;
+        transition: 0.2s ease;
+        cursor: pointer;
 
-      &:hover {
-        background-color: #5c6ca1;
+        &:hover {
+          background-color: #5c6ca1;
+        }
+      }
+      .nav-head-icon{
+        width: 2.5rem;
+        height: 2.5rem;
+        background: #99a6d0;
+        border-radius: 8px;
+        transition: 0.2s ease;
+        cursor: pointer;
       }
     }
   }

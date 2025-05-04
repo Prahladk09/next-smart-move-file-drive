@@ -16,6 +16,23 @@
   flex-direction: column;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
+.modal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #dcd7d7;
+  .close-btn{
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  span {
+    font-size: 13px;
+    font-weight: 600;
+    font-family: system-ui;
+  }
+}
 
 .modal-header {
   display: flex;
@@ -26,12 +43,12 @@
     background: none;
     border: none;
     cursor: pointer;
-    padding: .5rem 1rem;;
+    padding: .5rem 1rem;
   }
   span {
     font-size: 13px;
     font-weight: 600;
-    padding: .5rem 1rem;;
+    padding: .5rem 1rem;
     font-family: system-ui;
   }
 }

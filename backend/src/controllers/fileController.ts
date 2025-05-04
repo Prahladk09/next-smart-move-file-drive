@@ -40,3 +40,25 @@ export const uploadFile = async (req: Request, res: Response) => {
     res.status(500).json({ message: 'Failed to upload file', error: err });
   }
 };
+
+export const deleteFile = async (req: Request, res: Response) => {
+  const fileId = req.params.id;
+  console.log('[DELETE] Request to delete file:', fileId);
+
+  try {
+    const file = await File.findByIdAndDelete(fileId);
+    if (!file) {
+      console.warn('File not found in DB');
+      res.status(404).json({ message: 'File not found' });
+      return;
+    }else {
+      console.log('Found file:', file.originalName);
+    }
+
+    res.json({ message: 'File deleted successfully' });
+  } catch (error) {
+    console.error('Error deleting file:', error);
+    res.status(500).json({ message: 'Failed to delete file' });
+  }
+};
+

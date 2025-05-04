@@ -19,6 +19,11 @@ function FolderItem({ folder }: Props) {
   const loadedFolders = useFileStore((s) => s.loadedFolders);
   const loadFolderById = useFileStore((s) => s.loadFolderById);
   const folderData = loadedFolders[folder._id] || folder;
+  const setSelectedFile = useFileStore((s) => s.setSelectedFile);
+
+  const handleClick = (file: FileItem) => {
+    setSelectedFile(file);
+  };
 
 
   return (
@@ -59,7 +64,7 @@ function FolderItem({ folder }: Props) {
           ))}
 
           {folderData.files?.map((file: FileItem) => (
-            <div key={file._id} className="file-row d-flex align-center gap-1">
+            <div key={file._id} className="file-row d-flex align-center gap-1" onClick= {() =>handleClick(file)}>
               <i className="material-icons-outlined file-icon">description</i>
               <span className="file-name">{file.originalName}</span>
             </div>

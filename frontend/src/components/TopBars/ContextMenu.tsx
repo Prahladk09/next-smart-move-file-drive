@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import CreateFolderModal from '../modals/CreateFolderModal';
-import UploadFileModal from '../modals/UploadFileModal';
+import UploadFileModal from '../modals/UploadDocumentModal';
 import '../../styles/context-menu.scss';
 
 const ContextMenu: React.FC = () => {
