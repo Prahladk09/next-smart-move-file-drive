@@ -57,6 +57,13 @@ CLOUDINARY_CLOUD_NAME=your_cloud_name
 CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
 
+### Cloudinary Setup guide
+1. create account on cloudinary
+2. go to dashboard and capy cloud name
+3. go to setting > Api keys -- create new api key and copy the api key & apy secret.
+### by default pdf and docs are seted to be non delivered on cloudenary, will have to enable it with below steps for display pdf's on UI in iframe.
+4. Go to setting > security > PDF and ZIP files delivery -- tick the checkbox and save.
+
 
 Frontend .env
 VITE_API_URL=http://localhost:5001/api
